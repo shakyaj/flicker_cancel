@@ -33,4 +33,11 @@ Figure below shows the layout of clkgen (completed)
 Figure below shows the layout of gm_noflicker cell (work in progress)
 ![Layout](figures/gm_noflicker_layout.png)
 
+4. Noise simulation
+  The devices were sized such that at chopping frequency a 2pF load can be driven (this is an assumption, not sure how much load will be there in pcb. Might have to add a LNA or buffer). Also made sure that noise corner is below the chopping frequency. Bias current is 100uA each. Figure below shows the noise simulation results.
+
+![Simulation](figures/gm_noflicker_tb_noise_simulation.png)
+
+Due to the way the noise is modeled, this scheme couldn't not be verified completely in PNOISE simulation in different process technology. Also only partial cancellation shows up in Transient Noise simulation. Hence we wanted to test in real Silicon if the flicker noise cancellation works. Therefore no other simulation is planned. At the same time ngspice cannot be used to run transient noise simulation. We tried to export the spice models into Cadence environment, however due to differences in ngspice format and hspice format, we were not able to do that as well.
+  So we plan on just making sure we can drive the load and hence see the noise corner without chopping and be able to see the 1/f slope go away with chopping. Only operating point simulation and noise simulation was run to make sure devices are in proper operating region.
 
