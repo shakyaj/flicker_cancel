@@ -6,6 +6,7 @@
 3. Layout (til date)
 4. Noise simulation
 
+1. Project Description
 A flicker noise cancellation technique using bias-switching technique is proposed. In this scheme instead of chopping the input, the effective Gm is switched from +Gm to -Gm periodically by switching bias current. This has several benefits over traditional chopping technique such as:
 1. The input stays high impedance and there is no need to have a driver or buffer to connect to such circuit block.
 2. The chopping glitches and transients are all common mode and hence chopping artifacts is reduced.
@@ -14,4 +15,22 @@ A flicker noise cancellation technique using bias-switching technique is propose
 
 Figure below shows the schematic of the proposed flicker noise cancelled Gm in pushpull structure.
 ![schematic](figures/gm_noflicker_schematic.png)  
+
+2. Schematics and test setup
+Figure below shows the schematic of gm\_noflicker cell
+![schematic](figures/gm_noflicker_schematic_xschem.png)
+
+Figure below shows the schematic of non-overlapping clock generator
+![schematic](figures/clkgen_schematic_xschem.png)
+
+Figure below shows the schematic of the test bench
+![schematic](figures/gm_noflicker_tb_schematic_xschem.png)
+
+3. Layout
+Figure below shows the layout of clkgen (completed)
+![Layout](figures/clkgen_layout.png)
+
+Figure below shows the layout of gm_noflicker cell (work in progress)
+![Layout](figures/gm_noflicker_layout.png)
+
 
